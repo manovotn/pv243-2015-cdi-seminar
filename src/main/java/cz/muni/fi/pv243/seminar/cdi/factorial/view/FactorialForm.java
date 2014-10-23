@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import cz.muni.fi.pv243.seminar.cdi.factorial.Factorial;
+import cz.muni.fi.pv243.seminar.cdi.factorial.Parallel;
 
 /**
  * Backing bean for the factorial form (factorial.xhtml)
@@ -19,6 +20,7 @@ public class FactorialForm {
     private BigInteger result;
 
     @Inject
+    @Parallel
     private Factorial factorial;
 
     public void compute() {

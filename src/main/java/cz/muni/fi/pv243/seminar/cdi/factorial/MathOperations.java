@@ -1,7 +1,10 @@
 package cz.muni.fi.pv243.seminar.cdi.factorial;
 
 import java.math.BigInteger;
+import java.util.concurrent.Future;
 
+import javax.ejb.AsyncResult;
+import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
 
 @Stateless
@@ -27,5 +30,10 @@ public class MathOperations {
         }
 
         return result;
+    }
+
+    @Asynchronous
+    public Future<BigInteger> multiplySequenceAsync(long from, long to) {
+        return new AsyncResult<>(multiplySequence(from, to));
     }
 }
