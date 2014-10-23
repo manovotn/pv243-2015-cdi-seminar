@@ -8,6 +8,7 @@ import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
 import javax.enterprise.event.Observes;
+import javax.inject.Named;
 
 import cz.muni.fi.pv243.seminar.cdi.factorial.util.FactorialComputationFinished;
 
@@ -17,6 +18,7 @@ import cz.muni.fi.pv243.seminar.cdi.factorial.util.FactorialComputationFinished;
  *
  * @author Jozef Hartinger
  */
+@Named
 @Singleton
 public class FactorialCache {
     private final Map<Long, BigInteger> cachedResults = new HashMap<Long, BigInteger>();
